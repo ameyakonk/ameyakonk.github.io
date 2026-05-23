@@ -1,680 +1,727 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5BB8W2X');</script>
-  <!-- End Google Tag Manager -->
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ameya Konkar — Embedded Systems & Edge ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <title>Personal Portfolio</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
+  :root {
+    --ink: #0f0e0c;
+    --ink2: #3a3832;
+    --ink3: #7a7670;
+    --paper: #f5f2eb;
+    --paper2: #edeae0;
+    --accent: #c94a1e;
+    --accent2: #e8763a;
+    --gold: #b5861a;
+    --teal: #1a7a6a;
+    --border: rgba(15,14,12,0.12);
+    --ff-display: 'DM Serif Display', Georgia, serif;
+    --ff-body: 'Outfit', sans-serif;
+    --ff-mono: 'DM Mono', monospace;
+  }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  html { scroll-behavior: smooth; }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  body {
+    font-family: var(--ff-body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(245,242,235,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--ff-display);
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink2); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
 
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 3rem 5rem 3rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--ff-mono); font-size: 0.78rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: var(--ff-display);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-desc {
+    font-size: 1.1rem; font-weight: 300; color: var(--ink2);
+    max-width: 480px; margin-bottom: 2.5rem; line-height: 1.75;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .btn-primary { background: var(--accent); color: #fff; border: 2px solid var(--accent); }
+  .btn-primary:hover { background: #a83a10; border-color: #a83a10; }
+  .btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  .hero-right {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg-text {
+    position: absolute; font-family: var(--ff-display);
+    font-size: 28vw; color: rgba(15,14,12,0.04);
+    user-select: none; white-space: nowrap; line-height: 1;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .hero-photo-wrap {
+    position: relative; z-index: 2;
+    width: 340px; height: 420px;
+  }
+  .hero-photo-border {
+    position: absolute; top: 18px; left: 18px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--accent); border-radius: 2px;
+  }
+  .hero-photo {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    object-fit: cover; border-radius: 2px;
+    display: block;
+    background: var(--paper2);
+  }
+  .hero-photo-placeholder {
+    width: 100%; height: 100%; border-radius: 2px;
+    background: linear-gradient(135deg, var(--paper2) 0%, #d4cec0 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .hero-initials {
+    font-family: var(--ff-display); font-size: 6rem;
+    color: var(--ink3); opacity: 0.5;
+  }
+  .hero-interests {
+    position: absolute; bottom: 2rem; left: 3rem;
+    display: flex; gap: 0.5rem; flex-wrap: wrap; max-width: 460px;
+  }
+  .tag {
+    font-family: var(--ff-mono); font-size: 0.7rem;
+    letter-spacing: 0.08em; padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border); border-radius: 999px;
+    color: var(--ink3); background: var(--paper2);
+  }
 
-    gtag('config', 'UA-169007209-3');
-  </script>
+  /* SECTIONS */
+  section { padding: 6rem 3rem; }
+  .section-label {
+    font-family: var(--ff-mono); font-size: 0.75rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--ink); margin-bottom: 3rem; line-height: 1.15;
+  }
+  .divider { width: 48px; height: 3px; background: var(--accent); margin: 1rem 0 2.5rem; }
 
+  /* ABOUT */
+  #about { background: var(--paper); }
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+  .about-bio { font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--ink2); }
+  .about-bio p + p { margin-top: 1.25rem; }
+  .about-meta { display: grid; gap: 1rem; }
+  .meta-row {
+    display: flex; align-items: baseline; gap: 1rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+  }
+  .meta-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); min-width: 70px; }
+  .meta-val { font-size: 0.95rem; color: var(--ink); }
+  .meta-val a { color: var(--accent); text-decoration: none; }
+  .meta-val a:hover { text-decoration: underline; }
 
+  /* EXPERIENCE */
+  #experience { background: var(--paper2); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 2rem; padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .exp-item:first-child { padding-top: 0; }
+  .exp-meta {}
+  .exp-period {
+    font-family: var(--ff-mono); font-size: 0.75rem;
+    letter-spacing: 0.06em; color: var(--ink3); margin-bottom: 0.5rem;
+  }
+  .exp-company {
+    font-weight: 600; font-size: 0.9rem; color: var(--accent);
+    text-decoration: none;
+  }
+  .exp-company:hover { text-decoration: underline; }
+  .exp-role { font-family: var(--ff-display); font-size: 1.3rem; color: var(--ink); margin-bottom: 1rem; }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 0.95rem; font-weight: 300; color: var(--ink2);
+    padding: 0.35rem 0; padding-left: 1.25rem; position: relative;
+    line-height: 1.6;
+  }
+  .exp-bullets li::before {
+    content: '—'; position: absolute; left: 0;
+    color: var(--accent); font-weight: 400;
+  }
 
-  <!-- =======================================================
-  * Template Name: Personal - v2.1.0
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  /* EDUCATION */
+  #education { background: var(--paper); }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .edu-card {
+    padding: 2rem; border: 1px solid var(--border); border-radius: 2px;
+    background: var(--paper); position: relative; overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .edu-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .edu-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%; background: var(--accent);
+  }
+  .edu-degree { font-family: var(--ff-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 0.25rem; }
+  .edu-school { font-size: 0.9rem; font-weight: 500; color: var(--accent); margin-bottom: 0.25rem; }
+  .edu-period { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--ink3); margin-bottom: 1.25rem; }
+  .edu-courses-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink3); font-family: var(--ff-mono); margin-bottom: 0.5rem; }
+  .edu-courses { list-style: none; }
+  .edu-courses li { font-size: 0.88rem; color: var(--ink2); font-weight: 300; padding: 0.2rem 0; }
+
+  /* CERTIFICATIONS */
+  .cert-grid { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+  .cert-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 0; border-bottom: 1px solid var(--border);
+  }
+  .cert-name { font-size: 0.95rem; color: var(--ink2); font-weight: 300; }
+  .cert-link {
+    font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.06em;
+    color: var(--accent); text-decoration: none; text-transform: uppercase;
+  }
+  .cert-link:hover { text-decoration: underline; }
+
+  /* PROJECTS */
+  #projects { background: var(--ink); color: var(--paper); }
+  #projects .section-title { color: var(--paper); }
+  #projects .section-label { color: var(--accent2); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .project-card {
+    padding: 1.75rem; border: 1px solid rgba(245,242,235,0.12);
+    border-radius: 2px; background: rgba(245,242,235,0.04);
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+  }
+  .project-card:hover { border-color: var(--accent2); background: rgba(245,242,235,0.08); }
+  .project-cat {
+    font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent2); margin-bottom: 0.75rem;
+  }
+  .project-name { font-family: var(--ff-display); font-size: 1.15rem; color: var(--paper); margin-bottom: 0.5rem; }
+  .project-desc { font-size: 0.88rem; font-weight: 300; color: rgba(245,242,235,0.65); line-height: 1.6; }
+
+  /* SKILLS */
+  #skills { background: var(--paper2); }
+  .skills-block { margin-bottom: 2.5rem; }
+  .skills-cat { font-family: var(--ff-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 1rem; }
+  .skills-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .skill-chip {
+    font-size: 0.85rem; font-weight: 400; padding: 0.45rem 1rem;
+    border: 1px solid var(--border); border-radius: 2px;
+    color: var(--ink2); background: var(--paper);
+    transition: all 0.15s;
+  }
+  .skill-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CONTACT */
+  #contact { background: var(--paper); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-big {
+    font-family: var(--ff-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1; color: var(--ink); margin-bottom: 2rem;
+  }
+  .contact-big em { color: var(--accent); font-style: italic; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 1.25rem 1.5rem; border: 1px solid var(--border);
+    border-radius: 2px; background: var(--paper2);
+    text-decoration: none; color: var(--ink);
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); background: var(--paper); transform: translateX(4px); }
+  .contact-link-icon {
+    width: 40px; height: 40px; border-radius: 2px;
+    background: var(--accent); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-link-icon svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; }
+  .contact-link-label { font-size: 0.75rem; font-family: var(--ff-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
+  .contact-link-val { font-size: 0.95rem; font-weight: 500; color: var(--ink); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: rgba(245,242,235,0.4);
+    padding: 2rem 3rem; text-align: center;
+    font-family: var(--ff-mono); font-size: 0.75rem; letter-spacing: 0.06em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+  .hero-name { animation: fadeUp 0.6s ease both; animation-delay: 0.2s; }
+  .hero-desc { animation: fadeUp 0.6s ease both; animation-delay: 0.35s; }
+  .hero-btns { animation: fadeUp 0.6s ease both; animation-delay: 0.5s; }
+  .hero-photo-wrap { animation: fadeUp 0.8s ease both; animation-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 60vw; }
+    .hero-bg-text { font-size: 40vw; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .contact-grid, .edu-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .hero-interests { left: 1.5rem; }
+    .hero-left { padding: 3rem 1.5rem; }
+  }
+</style>
 </head>
-
 <body>
-  
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- ======= Header ======= -->
-  <header id="header" class="header-tops">
 
-    <div class="container">
+<nav>
+  <a href="#hero" class="nav-logo">Ameya Konkar</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-      <h1><a href="index.html">Ameya Konkar</a></h1>
-      <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#header"> <span>Home</span></a></li>
-          <li><a href="#about"><span>About</span></a></li>
-          <li><a href="#education"> <span>Education</span></a></li>
-          <li><a href="#experience"> <span>Experience</span></a></li>
-<!--          <li><a href="#projects"> <span>Projects</span></a></li>-->
-          <li><a href="#portfolio"> <span>Projects</span></a></li>
-          <li><a href="#skills"> <span>Skills</span></a></li>
-          <li><a href="https://drive.google.com/file/d/1Fq-pI2sb_jl8_2_Q-d8mBuxsf7q25pCN/view?usp=sharing" target="_blank"> <span>Resume</span></a></li>
-          <!-- <li><a href="#links"> <span>Resume & Links</span></a></li> -->
-          <li><a href="#contacts"> <span>Contact</span></a></li>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Embedded Systems · Edge ML · Real-Time AI</p>
+    <h1 class="hero-name">Ameya<br><em>Konkar</em></h1>
+    <p class="hero-desc">I build intelligent systems at the edge — deploying ML models on microcontrollers, writing real-time embedded firmware, and closing the loop between sensors and on-device inference. From FOC motor control on DeWalt tools to SVM fault detection running live on a UAV.</p>
+    <div class="hero-btns">
+      <a href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing" class="btn btn-primary" target="_blank">View Résumé</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-interests" style="position:relative;left:auto;bottom:auto;margin-top:2.5rem;">
+      <span class="tag">Embedded Systems</span>
+      <span class="tag">Edge ML</span>
+      <span class="tag">TinyML</span>
+      <span class="tag">Real-Time Inference</span>
+      <span class="tag">Motor Control</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">Robotics</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-text">AK</div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-border"></div>
+      <img class="hero-photo" src="https://ameyakonk.github.io/assets/img/profile.jpeg" alt="Ameya Konkar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="hero-photo-placeholder" style="display:none;">
+        <span class="hero-initials">AK</span>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Who I Am</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-bio">
+      <p>I engineer the intersection of embedded systems and machine learning — building systems where inference happens on the device, in real time, under tight resource constraints. My work lives at the edge: inside microcontrollers, on single-board computers, and aboard autonomous vehicles.</p>
+      <p>At Stanley Black & Decker, I develop embedded firmware and motor control algorithms for next-generation DeWalt power tools — implementing FOC on ARM Cortex-M MCUs, architecting NFC communication stacks, and writing the drivers and control loops that make hardware behave intelligently.</p>
+      <p>My graduate research in robotics pushed me deep into edge ML: training SVM classifiers on multi-sensor UAV data and deploying them as real-time ROS nodes on a Raspberry Pi, achieving 95% fault-detection accuracy during live flights. I think about model compression, quantization, and latency as first-class design constraints — not afterthoughts.</p>
+    </div>
+    <div class="about-meta">
+      <div class="meta-row"><span class="meta-label">Birthday</span><span class="meta-val">October 28, 1997</span></div>
+      <div class="meta-row"><span class="meta-label">Location</span><span class="meta-val">Baltimore, MD</span></div>
+      <div class="meta-row"><span class="meta-label">Email</span><span class="meta-val"><a href="mailto:ameyakonkar@gmail.com">ameyakonkar@gmail.com</a></span></div>
+      <div class="meta-row"><span class="meta-label">Phone</span><span class="meta-val">+1 (240) 259-1263</span></div>
+      <div class="meta-row"><span class="meta-label">LinkedIn</span><span class="meta-val"><a href="https://www.linkedin.com/in/ameya-konkar" target="_blank">linkedin.com/in/ameya-konkar</a></span></div>
+      <div class="meta-row"><span class="meta-label">GitHub</span><span class="meta-val"><a href="https://github.com/ameyakonk" target="_blank">github.com/ameyakonk</a></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Work History</p>
+  <h2 class="section-title">Experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-period">Aug 2023 — Present</p>
+        <a class="exp-company" href="https://www.stanleyblackanddecker.com/" target="_blank">Stanley Black & Decker</a>
+      </div>
+      <div>
+        <p class="exp-role">Embedded Systems & Firmware Engineer</p>
+        <ul class="exp-bullets">
+          <li>Developing bare-metal and RTOS-based firmware in C for next-generation DeWalt brushless power tools on ARM Cortex-M MCUs.</li>
+          <li>Implementing FOC (Field-Oriented Control) motor control algorithms — tuning PI current controllers, speed loops, and space-vector PWM generation for brushless motor drives.</li>
+          <li>Architected NFC communication stack to relay motor operating parameters wirelessly to selected power tools during configuration and diagnostics.</li>
+          <li>Writing hardware abstraction layers (HAL), peripheral drivers (SPI, I2C, UART, PWM, ADC, DMA), and closed-loop control state machines from scratch.</li>
+          <li>Performing unit testing, hardware-in-the-loop (HIL) validation, and oscilloscope/logic-analyzer debugging to meet functional safety standards.</li>
         </ul>
-      </nav><!-- .nav-menu -->
-
-      <div class="social-links">
-          <a href="https://www.linkedin.com/in/ameya-konkar" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://www.github.com/ameyakonk" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-          <a href="mailto:ameyakonkar@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
-      </div>
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-
-    <!-- ======= About Me ======= -->
-    <div class="about-me container">
-
-      <div class="section-title">
-        <h2>About</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/profile.jpeg" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <p>
-            A driven and passionate developer deeply intrigued by Artificial Intelligence. 
-            Through extensive immersion in the core principles and their dynamic application across diverse projects, my fascination for these fields blossomed. 
-            I am an enthusiastic individual dedicated to crafting and implementing algorithms to address tangible challenges in industry.
-          </p>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 28 October 1997</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +1 (240)-259-1263</li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Baltimore, MD</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> ameyakonkar@gmail.com</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- End About Me -->
-
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-database-2-line" style="color: #5578ff;"></i>
-            <h3>Machine Learning</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-camera-3-line" style="color: #e80368;"></i>
-            <h3>Computer Vision</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <i class="ri-english-input" style="color: #1c7d32;"></i>
-            <h3>Natural Language Processing</h3>
-          </div>
-        </div>
-        
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <i class="ri-global-line" style="color: #ffbb2c;"></i>
-            <h3>Software Development</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-file-list-3-line" style="color: #47aeff;"></i>
-            <h3>Algorithms</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-image-line" style="color: #ffc107;"></i>
-            <h3>Image Processing</h3>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- End Interests -->
-  </section><!-- End About Section -->
-
-
-
-  <!-- ======= Education Section ======= -->
-  <section id="education" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Education</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
-
-
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/umd_logo.png" class="img-fluid" alt="">
-              <!-- <h4 style="text-align:left;"><a href="https://www.asu.edu/" target="_blank" style="color:#12d640">Arizona State University</a><br> </h4> -->
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>M.Eng in Robotics</em></p>
-              <h5 style="text-align:left;padding: 0px 10px;">August 2021 - May 2023</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>AI and Deep Learning Framework for Robotics</li>
-                <li>Computer Processing for Pictorial Information</li>
-              </ul>
-            </div>
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/uni_mumbai_logo.png" class="img-fluid" alt="">
-              <!-- <h4 style="text-align:left;"><a href="https://ahduni.edu.in/" target="_blank" style="color:#12d640">Ahmedabad University</a><br> </h4> -->
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>B.Tech. in Electronics Engineering</em></p>
-              <h5 style="text-align:left;padding: 0px 10px;">July 2016 - October 2020</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <!-- <li>Data Structures &amp; Algorithms</li> -->
-                <li>Object Oriented Programming</li>
-                <!-- <li>Operating Systems</li> -->
-                <li>Data Structures and Algorithms</li>
-                <li>Machine Learning</li>
-                <!-- <li>Computer Vision</li> -->
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    <div class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Online Certification</h2>
-      </div>
-
-      <div class="row portfolio-container" style="position: relative; height: 437.75px;">
-
-         <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
-        <div class="portfolio-wrap">
-          <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Machine Learning</h4>
-            <div class="portfolio-links">
-              <a href="https://www.coursera.org/account/accomplishments/certificate/Y8NLMRRVJ4PP" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 370px; top: 0px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Neural Networks and Deep Learning</h4>
-              <div class="portfolio-links">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/66F55EYY2VYY" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 370px; top: 0px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</h4>
-              <div class="portfolio-links">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/EB4ZDYTYEM8D" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 740px; top: 218.875px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/dai.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Learn Object-Oriented Programming in C++</h4>
-              <div class="portfolio-links">
-                <a href="https://www.educative.io/verify-certificate/O7rwGNTwozzl2X1Q0sjylJ8pxWJ7FB" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-    </div>
 
-  </section>
-  <!-- End Education Section -->
-
-
-
-  <!-- Start Experience Section -->
-
-  <section id="experience" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Experience</h2>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-period">Jan 2022 — Sep 2022</p>
+        <a class="exp-company" href="https://umd.edu/" target="_blank">Univ. of Maryland, CP</a>
       </div>
-      <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.stanleyblackanddecker.com/" style="color:#12d640">Stanley Black and Decker</a><br> </h4>
-                <h5 style="text-align:left;">August 2023 - Present</h5>
-                <p style="text-align:left;color:#fff"><em>Software Engineer </em></p>
-                <ul style="text-align:left;">
-                  <li>Implementing advanced motor control algorithms on various upcoming DeWalt products.</li>
-                  <li>Implemented NFC communication to relay desired motor parameters to be set on
-                    the selected power tool.</li>
-                </ul>
-              </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://umd.edu/" style="color:#12d640">University of Maryland, College Park</a><br> </h4>
-                <h5 style="text-align:left;">January 2022 - September 2022</h5>
-                <p style="text-align:left;color:#fff"><em>Graduate Research Assistant</em></p>
-                <ul style="text-align:left;">
-                  <li>Led a group of 4 to develop a Fault Detection module to detect 5+ different actuators' faults in a UAV.</li>
-                  <li>Performed the data collection by employing a fixed-wing UAV to log 5+ different sensors’ data and 4+ actuators' data.</li>
-                  <li>Analyzed data and engineering features, leveraged Support Vector Machines to classify the faults in real-time during
-                    flights, and utilized K-Fold Cross Validation to improve accuracy to 95%.</li>
-                  <li>Deployed the model into a ROS node of an Autonomous Navigation System project present on a Raspberry Pi.</li>
-                </ul>
-              </div>
-            
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.betic.org/" target="_blank" style="color:#12d640">Biomedical Engineering, and Technology Innovation Center (BETiC) </a><br> </h4>
-                <h5 style="text-align:left;">April 2020 - July 2021</h5>
-                <p style="text-align:left;color:#fff"><em>Project Research Assistant</em></p>
-                <ul style="text-align:left;">
-                  <li>Prototyped devices for three projects: Ventilator - VI-SWAAS, Scalp Cooling System, and Dental Intraoral Scanner in C. </li>
-                  <li>VI-SWAAS ventilator - Programmed four modes of medical ventilation and devised unit tests for verifying sensor data.</li>
-                  <li>Scalp Cooling System - Programmed sensing, operating modes, and UI-Embedded interface tasks.</li>
-                  <li>Dental Intraoral Scanner - Performed Stereo Depth Map Estimation using stereo image inputs from two Basler
-                    acA1300-200uc cameras and created documentation to interface Polyga software with the Basler cameras.</li>
-                </ul>
-              </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- End Experience Section -->
-
-
-
-  <!-- Start Project Section -->
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Projects</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-cv">Computer Vision</li>
-            <li data-filter=".filter-ml">Machine Learning</li>
-            <li data-filter=".filter-dl">Deep Learning</li>
-            <li data-filter=".filter-nlp">Natural Language Learning</li>
-            <li data-filter=".filter-pp">Path Planning</li>           
-          </ul>
-        </div>
-      </div>
-
-      <div class="row portfolio-container">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-pp">
-          <center><h4>Dijkstra Algorithm</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/twitteranalysis.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              
-              <div class="portfolio-links">
-                <a href="projects/Dijkstra.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-pp">
-          <center><h4>A* Algorithm</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/iras.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              
-              <div class="portfolio-links">
-                <a href="projects/Astar.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-pp">
-          <center><h4>RRT* Algorithm</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/musicplayer.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              
-              <div class="portfolio-links">
-                <a href="projects/RRTstar.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-pp">
-          <center><h4>Multi-Robot goal assignment</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/musicplayer.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              
-              <div class="portfolio-links">
-                <a href="projects/RRTstar.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-cv">
-          <center><h4>Monocular Depth Estimation</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/recommender.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              
-              <div class="portfolio-links">
-                <a href="projects/MonocularDepthEst.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>To-Do App</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/todo.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects/todo.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-cv">
-          <!-- <br> -->
-          <center><h4>Face Swap</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/resume.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Face Swap</h4>
-              <div class="portfolio-links">
-                <a href="projects/FaceSwap.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <br>
-          <center><h4>Tech Blog</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/blog.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects/blog.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-cv">
-          <center><h4>Stereo Depth Map Estimation</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/vdg.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects/StereoDepthMapEst.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-cv">
-          <center><h4>Lane detection</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/ml.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects/SlidingWindowLaneDetect.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-cv">
-          <!-- <br> -->
-          <center><h4>Structure for Motion</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/gan.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects/StructureFromMotion.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-cv">
-          <!-- <br> -->
-          <center><h4>Augmented Reality</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/gan.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects/AugmentedReality.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <div>
+        <p class="exp-role">Edge ML Research Assistant</p>
+        <ul class="exp-bullets">
+          <li>Led a team of 4 to design and deploy an on-device Fault Detection system for 5+ actuator fault classes in a fixed-wing UAV — the full pipeline ran in real time on a Raspberry Pi 4.</li>
+          <li>Collected multi-modal sensor data (5+ sensors, 4+ actuators) during live UAV flights to build a labeled training dataset under realistic aerodynamic conditions.</li>
+          <li>Engineered time-domain and frequency-domain features; trained and optimized an SVM classifier, applying K-Fold Cross Validation to achieve 95% real-time accuracy.</li>
+          <li>Quantized and optimized the model for edge deployment, then wrapped it as a ROS node integrated into the UAV's Autonomous Navigation System.</li>
+          <li>Demonstrated closed-loop edge inference: sensor data → on-board model → fault flag → navigation response, with no cloud dependency.</li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- End Project Section -->
-
-
-
-  <!-- Start Skills Section -->
-
-  <section id="skills" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Skills</h2>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-period">Apr 2020 — Jul 2021</p>
+        <a class="exp-company" href="https://www.betic.org/" target="_blank">BETiC</a>
       </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up">
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Languages and Databases</h4>
-                <p style="text-align:left;">
-                  <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="vectorlogo.zone" height="50" width="150">
-                  <img src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg" alt="vectorlogo.zone" height="50" width="120">
-                  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="upload.wikimedia.org" height="60" width="90">
-                  <img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="vectorlogo.zone" height="70" width="130">
-                  <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="vectorlogo.zone" height="50" width="190">
-
-                </p>
-            </div>
-            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Frameworks</h4>
-                <p style="text-align:left;">
-                  <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="upload.wikimedia.org" width="90" height="70">
-              </p>
-          </div>
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Tools</h4>
-                <p style="text-align:left;">
-                  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="vectorlogo.zone">
-              </p>
-          </div>
-        </div>
+      <div>
+        <p class="exp-role">Embedded Systems & On-Device CV Research Assistant</p>
+        <ul class="exp-bullets">
+          <li>Developed resource-constrained firmware in C for three medical device prototypes targeting low-power MCUs: Ventilator (VI-SWAAS), Scalp Cooling System, and Dental Intraoral Scanner.</li>
+          <li>VI-SWAAS ventilator — implemented four clinical ventilation mode state machines (VC, PC, SIMV, CPAP) with real-time sensor validation, alarm logic, and hardware fail-safes.</li>
+          <li>Scalp Cooling System — engineered PID-based temperature control loops, multi-mode state machines, and an embedded UI with sensor fusion running on a bare-metal MCU.</li>
+          <li>Dental Intraoral Scanner — wrote C drivers for dual Basler acA1300-200uc cameras over GigE Vision; implemented stereo depth map estimation entirely on-device for real-time 3D reconstruction.</li>
+          <li>All CV inference ran locally with no cloud — optimized for latency and memory footprint on embedded Linux.</li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- End Skills Section -->
+  </div>
+</section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Academic Background</p>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <p class="edu-degree">M.Eng in Robotics</p>
+      <p class="edu-school">University of Maryland, College Park</p>
+      <p class="edu-period">August 2021 — May 2023</p>
+      <p class="edu-courses-label">Relevant Coursework</p>
+      <ul class="edu-courses">
+        <li>AI and Deep Learning Framework for Robotics</li>
+        <li>Computer Processing for Pictorial Information</li>
+      </ul>
+    </div>
+    <div class="edu-card">
+      <p class="edu-degree">B.Tech in Electronics Engineering</p>
+      <p class="edu-school">University of Mumbai</p>
+      <p class="edu-period">July 2016 — October 2020</p>
+      <p class="edu-courses-label">Relevant Coursework</p>
+      <ul class="edu-courses">
+        <li>Object Oriented Programming</li>
+        <li>Data Structures and Algorithms</li>
+        <li>Machine Learning</li>
+      </ul>
+    </div>
+  </div>
 
-
-
-  <!-- Start Links section -->
-  <section id="links" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Resume & Links</h2>
+  <div style="margin-top:3.5rem;">
+    <p class="section-label">Certifications</p>
+    <h3 style="font-family:var(--ff-display);font-size:1.5rem;color:var(--ink);margin-bottom:0.5rem;">Online Certifications</h3>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <span class="cert-name">Machine Learning — Stanford / Coursera</span>
+        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/certificate/Y8NLMRRVJ4PP" target="_blank">View ↗</a>
       </div>
-      <div class="row">
-        <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
-          <h4 class="title"><a href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing" target="_blank">Resume</a></h4>
-          <p class="description" style="color:#fff;">The link contains downloadable resume</p>
-        </div>
-        <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
-          <a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank"><div class="icon"><i class="icofont-link"></i></div></a>
-          <h4 class="title"><a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank">LeetCode Repository</a></h4>
-          <p class="description" style="color:#fff;"> The github repository contains leetcode problems solution in python.</p>
-        </div>
-        <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://techingenious.herokuapp.com/" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
-          <h4 class="title"><a href="https://techingenious.herokuapp.com/" target="_blank">Blog</a></h4>
-          <p class="description" style="color:#fff;">Blog containing articles on AI, coding, development</p>
-        </div> -->
+      <div class="cert-item">
+        <span class="cert-name">Neural Networks and Deep Learning — Coursera</span>
+        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/certificate/66F55EYY2VYY" target="_blank">View ↗</a>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization — Coursera</span>
+        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/certificate/EB4ZDYTYEM8D" target="_blank">View ↗</a>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">Learn Object-Oriented Programming in C++ — Educative.io</span>
+        <a class="cert-link" href="https://www.educative.io/verify-certificate/O7rwGNTwozzl2X1Q0sjylJ8pxWJ7FB" target="_blank">View ↗</a>
       </div>
     </div>
-  </section> <!--End Links Section -->
+  </div>
+</section>
 
-
-  <!-- Start Contact Section -->
-
-  <section id="contacts" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-      </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/ameya-konkar" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://www.github.com/ameyakonk" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-              <a href="mailto:ameyakonkar@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Email</h3>
-            <p>ameyakonkar@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Contact</h3>
-            <p>+1 (240)-259-1263</p>
-          </div>
-        </div>
-      </div>
-      <!-- <div id="sfczmlqxr5caww28rswrt8849ghbekgnh3j" ></div><script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=zmlqxr5caww28rswrt8849ghbekgnh3j&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.stat.ovh/private/freecounterstat.php?c=zmlqxr5caww28rswrt8849ghbekgnh3j" border="0" title="free web counter" alt="free web counter" style="visibility: none;"></a></noscript> -->
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Selected Work</p>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
+      <p class="project-cat" style="color:var(--accent2);">⚡ Embedded · Featured</p>
+      <p class="project-name">DeWalt Motor Control Firmware</p>
+      <p class="project-desc">FOC motor control on ARM Cortex-M for next-gen DeWalt brushless tools. Bare-metal C, SPI/I2C/UART/PWM drivers, NFC parameter relay, and HIL-validated control loops under functional safety constraints.</p>
     </div>
-  </section>
+    <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
+      <p class="project-cat" style="color:var(--accent2);">⚡ Edge ML · Featured</p>
+      <p class="project-name">UAV Fault Detection — Edge Inference</p>
+      <p class="project-desc">End-to-end edge ML pipeline: feature engineering on 5+ sensor streams → SVM classifier optimized for Raspberry Pi 4 → deployed as a live ROS node. 95% accuracy, zero cloud dependency, closed-loop flight response.</p>
+    </div>
+    <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
+      <p class="project-cat" style="color:var(--accent2);">⚡ Embedded CV · Featured</p>
+      <p class="project-name">On-Device Stereo Depth (Intraoral Scanner)</p>
+      <p class="project-desc">Real-time stereo depth map estimation running locally on embedded Linux. C drivers for dual Basler GigE cameras, disparity computation, and 3D reconstruction — all on-device for a medical imaging prototype.</p>
+    </div>
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">Dijkstra Algorithm</p>
+      <p class="project-desc">Implementation of Dijkstra's shortest path algorithm for robot navigation and graph traversal.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/Astar.html" target="_blank">
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">A* Algorithm</p>
+      <p class="project-desc">Heuristic-based pathfinding algorithm providing efficient optimal path search for autonomous systems.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/RRTstar.html" target="_blank">
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">RRT* Algorithm</p>
+      <p class="project-desc">Rapidly-exploring Random Tree* for sampling-based motion planning in complex environments.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/RRTstar.html" target="_blank">
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">Multi-Robot Goal Assignment</p>
+      <p class="project-desc">Distributed task allocation system for coordinating multiple autonomous robots toward joint objectives.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/MonocularDepthEst.html" target="_blank">
+      <p class="project-cat">Edge ML · Computer Vision</p>
+      <p class="project-name">Monocular Depth Estimation</p>
+      <p class="project-desc">Deep learning depth inference from a single RGB camera — optimized for edge deployment with minimal memory and compute footprint. Suitable for resource-constrained robotic platforms.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/FaceSwap.html" target="_blank">
+      <p class="project-cat">Computer Vision</p>
+      <p class="project-name">Face Swap</p>
+      <p class="project-desc">Real-time facial landmark detection and seamless face transfer between image and video sources.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/StereoDepthMapEst.html" target="_blank">
+      <p class="project-cat">Computer Vision</p>
+      <p class="project-name">Stereo Depth Map Estimation</p>
+      <p class="project-desc">3D reconstruction from stereo image pairs using disparity computation and calibration pipelines.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/SlidingWindowLaneDetect.html" target="_blank">
+      <p class="project-cat">Embedded CV · Autonomous Systems</p>
+      <p class="project-name">Lane Detection</p>
+      <p class="project-desc">Real-time sliding window lane detection designed for on-board automotive perception — low-latency, camera-only, no cloud dependency.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/StructureFromMotion.html" target="_blank">
+      <p class="project-cat">Computer Vision</p>
+      <p class="project-name">Structure From Motion</p>
+      <p class="project-desc">Reconstructing 3D scene structure from a sequence of 2D images using feature matching and bundle adjustment.</p>
+    </a>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/AugmentedReality.html" target="_blank">
+      <p class="project-cat">Computer Vision</p>
+      <p class="project-name">Augmented Reality</p>
+      <p class="project-desc">AR overlay system using camera calibration and homography estimation to embed virtual objects in real scenes.</p>
+    </a>
+  </div>
+</section>
 
-  <!-- End Contact Section -->
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Tech Stack</p>
+  <h2 class="section-title">Skills</h2>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["AI Enthusiast", "Coder"],
-      loop: true,
-      typeSpeed: 65,
-      backSpeed: 65
-    });
-  </script>
+  <div class="skills-block">
+    <p class="skills-cat">Embedded Systems & Firmware</p>
+    <div class="skills-tags">
+      <span class="skill-chip">Bare-metal C</span>
+      <span class="skill-chip">RTOS (FreeRTOS)</span>
+      <span class="skill-chip">ARM Cortex-M</span>
+      <span class="skill-chip">FOC Motor Control</span>
+      <span class="skill-chip">HAL / BSP</span>
+      <span class="skill-chip">SPI · I2C · UART · CAN</span>
+      <span class="skill-chip">PWM / ADC / DMA</span>
+      <span class="skill-chip">NFC / RFID</span>
+      <span class="skill-chip">Bootloader Design</span>
+      <span class="skill-chip">HIL Testing</span>
+      <span class="skill-chip">JTAG / SWD Debugging</span>
+      <span class="skill-chip">Embedded Linux</span>
+    </div>
+  </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <div class="skills-block">
+    <p class="skills-cat">Edge ML & On-Device AI</p>
+    <div class="skills-tags">
+      <span class="skill-chip">TensorFlow Lite</span>
+      <span class="skill-chip">TinyML</span>
+      <span class="skill-chip">Model Quantization (INT8)</span>
+      <span class="skill-chip">Model Pruning</span>
+      <span class="skill-chip">ONNX Runtime</span>
+      <span class="skill-chip">Edge Inference Optimization</span>
+      <span class="skill-chip">Raspberry Pi Deployment</span>
+      <span class="skill-chip">OpenCV (embedded)</span>
+      <span class="skill-chip">scikit-learn</span>
+      <span class="skill-chip">Feature Engineering</span>
+      <span class="skill-chip">SVM · KNN · Random Forest</span>
+      <span class="skill-chip">Real-Time CV Pipelines</span>
+    </div>
+  </div>
+
+  <div class="skills-block">
+    <p class="skills-cat">ML & Deep Learning Frameworks</p>
+    <div class="skills-tags">
+      <span class="skill-chip">TensorFlow</span>
+      <span class="skill-chip">PyTorch</span>
+      <span class="skill-chip">ROS / ROS2</span>
+      <span class="skill-chip">Flask</span>
+      <span class="skill-chip">Django</span>
+      <span class="skill-chip">Node.js</span>
+    </div>
+  </div>
+
+  <div class="skills-block">
+    <p class="skills-cat">Languages</p>
+    <div class="skills-tags">
+      <span class="skill-chip">C / C++</span>
+      <span class="skill-chip">Python</span>
+      <span class="skill-chip">Assembly (ARM)</span>
+      <span class="skill-chip">Java</span>
+      <span class="skill-chip">SQL</span>
+    </div>
+  </div>
+
+  <div class="skills-block">
+    <p class="skills-cat">Domains</p>
+    <div class="skills-tags">
+      <span class="skill-chip">Embedded Systems</span>
+      <span class="skill-chip">Edge ML / TinyML</span>
+      <span class="skill-chip">Real-Time Systems</span>
+      <span class="skill-chip">Motor Control</span>
+      <span class="skill-chip">On-Device Computer Vision</span>
+      <span class="skill-chip">Autonomous Robotics</span>
+      <span class="skill-chip">Sensor Fusion</span>
+      <span class="skill-chip">Path Planning</span>
+      <span class="skill-chip">Medical Devices</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Let's Connect</p>
+  <div class="contact-grid">
+    <div>
+      <h2 class="contact-big">Get in<br><em>touch</em> with me.</h2>
+      <p style="font-size:1rem;font-weight:300;color:var(--ink2);line-height:1.75;">Open to roles in embedded systems, edge ML, and on-device AI. Let's talk about building intelligent hardware.</p>
+    </div>
+    <div class="contact-links">
+
+      <a class="contact-link" href="mailto:ameyakonkar@gmail.com">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </div>
+        <div>
+          <p class="contact-link-label">Email</p>
+          <p class="contact-link-val">ameyakonkar@gmail.com</p>
+        </div>
+      </a>
+
+      <a class="contact-link" href="https://www.linkedin.com/in/ameya-konkar" target="_blank">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div>
+          <p class="contact-link-label">LinkedIn</p>
+          <p class="contact-link-val">linkedin.com/in/ameya-konkar</p>
+        </div>
+      </a>
+
+      <a class="contact-link" href="https://github.com/ameyakonk" target="_blank">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        </div>
+        <div>
+          <p class="contact-link-label">GitHub</p>
+          <p class="contact-link-val">github.com/ameyakonk</p>
+        </div>
+      </a>
+
+      <a class="contact-link" href="tel:+12402591263">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.71 19.79 19.79 0 01.1 5.1 2 2 0 012.08 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <p class="contact-link-label">Phone</p>
+          <p class="contact-link-val">+1 (240) 259-1263</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Ameya Konkar · Built with care · Baltimore, MD</p>
+</footer>
 
 </body>
-
 </html>
