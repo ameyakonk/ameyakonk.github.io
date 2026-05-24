@@ -386,13 +386,11 @@
   <h2 class="section-title">About Me</h2>
   <div class="about-grid">
     <div class="about-bio">
-      <p>I'm a Baltimore-based embedded engineer — someone who starts at the hardware and builds upward. My foundation is firmware: bare-metal C, peripheral drivers, real-time control loops, and the discipline that comes from debugging systems where a missed deadline or a wrong register write means a physical failure.</p>
+      <p>I'm an embedded engineer — someone who starts at the hardware and builds upward. My foundation is firmware: bare-metal C, peripheral drivers, real-time control loops, and the discipline that comes from debugging systems where a missed deadline or a wrong register write means a physical failure.</p>
       <p>On top of that foundation I've built an edge ML practice. At Stanley Black & Decker I write firmware for next-generation DeWalt tools, implementing FOC motor control on ARM Cortex-M — and separately, I've built an end-to-end TinyML pipeline for an industrial drill: PyTorch activity detection model, compressed via structured pruning and INT8 quantization with ONNX, deployed using X-CUBE-AI. 95% precision in recoil detection in high-vibration environments. Before SBD, at BETiC, I built embedded prototypes in C for three medical devices: ventilation state machines for a clinical ventilator, PID temperature control for a scalp cooling system, and on-device stereo depth estimation for a dental intraoral scanner.</p>
       <p>My M.Eng in Robotics at UMD is where the two sides fused: I led a team building a real-time UAV fault detection system — a hybrid SVM-autoencoder on 9+ sensor streams, Dockerized and running as live ROS nodes during actual flights, integrated directly into the autonomous navigation stack. That project is a good summary of how I work: embedded-first, then make it intelligent.</p>
     </div>
     <div class="about-meta">
-      <div class="meta-row"><span class="meta-label">Birthday</span><span class="meta-val">October 28, 1997</span></div>
-      <div class="meta-row"><span class="meta-label">Location</span><span class="meta-val">Baltimore, MD</span></div>
       <div class="meta-row"><span class="meta-label">Email</span><span class="meta-val"><a href="mailto:ameyakonkar@gmail.com">ameyakonkar@gmail.com</a></span></div>
       <div class="meta-row"><span class="meta-label">Phone</span><span class="meta-val">+1 (240) 259-1263</span></div>
       <div class="meta-row"><span class="meta-label">LinkedIn</span><span class="meta-val"><a href="https://www.linkedin.com/in/ameya-konkar" target="_blank">linkedin.com/in/ameya-konkar</a></span></div>
@@ -413,7 +411,7 @@
         <a class="exp-company" href="https://www.stanleyblackanddecker.com/" target="_blank">Stanley Black & Decker</a>
       </div>
       <div>
-        <p class="exp-role">Embedded Systems & Edge ML Engineer</p>
+        <p class="exp-role">Senior Firmware Engineer</p>
 
         <p style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin:1rem 0 0.6rem;">Motor Control & Firmware</p>
         <ul class="exp-bullets">
@@ -527,47 +525,31 @@
   <p class="section-label">Selected Work</p>
   <h2 class="section-title">Projects</h2>
   <div class="projects-grid">
+    <!-- Embedded & Edge ML -->
+    <div style="grid-column: 1 / -1; margin-top: 1rem;">
+      <p style="font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.25rem;">⚡ Embedded & Edge ML</p>
+    </div>
     <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
-      <p class="project-cat" style="color:var(--accent2);">⚡ Edge ML · Featured</p>
+      <p class="project-cat" style="color:var(--accent2);">Edge ML · Featured</p>
       <p class="project-name">TinyML Pipeline — Industrial Drill (DeWalt)</p>
       <p class="project-desc">End-to-end TinyML pipeline deployed on an ARM Cortex-M4: PyTorch activity detection model → structured pruning → INT8 quantization via ONNX → X-CUBE-AI deployment. 95% precision in recoil detection, 86% activity classification accuracy in high-vibration environments. MLflow for model-to-firmware traceability.</p>
     </div>
     <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
-      <p class="project-cat" style="color:var(--accent2);">⚡ Edge ML · Featured</p>
+      <p class="project-cat" style="color:var(--accent2);">Edge ML · Featured</p>
       <p class="project-name">UAV Fault Detection — Hybrid SVM-Autoencoder</p>
       <p class="project-desc">Real-time fault detection for a Carbon-Z Cub SS UAV. Hybrid SVM-autoencoder model on 9+ sensor streams (IMU, GPS, barometer) — boosted accuracy from 78% to 84%. Modular ROS nodes, Dockerized workspace, live inference during flight.</p>
     </div>
-    <a class="project-card" href="https://github.com/ameyakonk/Dijkstra-Algorithm" target="_blank">
-      <p class="project-cat">Path Planning</p>
-      <p class="project-name">Dijkstra Algorithm</p>
-      <p class="project-desc">Implementation of Dijkstra's shortest path algorithm for robot navigation and graph traversal.</p>
-    </a>
-    <a class="project-card" href="https://github.com/ameyakonk/A-Star-Algorithm" target="_blank">
-      <p class="project-cat">Path Planning</p>
-      <p class="project-name">A* Algorithm</p>
-      <p class="project-desc">Heuristic-based pathfinding algorithm providing efficient optimal path search for autonomous systems.</p>
-    </a>
-    <a class="project-card" href="https://github.com/ameyakonk/RRT-Star-Algorithm" target="_blank">
-      <p class="project-cat">Path Planning</p>
-      <p class="project-name">RRT* Algorithm</p>
-      <p class="project-desc">Rapidly-exploring Random Tree* for sampling-based motion planning in complex environments.</p>
-    </a>
-    <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
-      <p class="project-cat">Path Planning</p>
-      <p class="project-name">Multi-Robot Goal Assignment</p>
-      <p class="project-desc">Distributed task allocation system for coordinating multiple autonomous robots toward joint objectives.</p>
-    </a>
+
+    <!-- Computer Vision -->
+    <div style="grid-column: 1 / -1; margin-top: 2rem;">
+      <p style="font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.25rem;">👁 Computer Vision</p>
+    </div>
     <a class="project-card" href="https://github.com/ameyakonk/Monocular-Depth-Map-Estimation" target="_blank">
-      <p class="project-cat">Edge ML · Computer Vision</p>
+      <p class="project-cat">Computer Vision · Deep Learning</p>
       <p class="project-name">Monocular Depth Estimation</p>
       <p class="project-desc">UNet with DenseNet169 encoder, custom loss combining edge loss, depth loss, and structural similarity. 70% test accuracy on NYU2 Depth dataset. Based on "High-Quality Monocular Depth Estimation via Transfer Learning."</p>
     </a>
     <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
-      <p class="project-cat">NLP · Deep Learning</p>
-      <p class="project-name">Transformer-Based Conversational Assistant</p>
-      <p class="project-desc">Chatbot built on a transformer model coded from scratch — positional encoders, masked and unmasked multi-head attention. Trained on the Cornell Movie-Dialogs Corpus using NLTK tokenization. Achieved a BLEU score of 0.38.</p>
-    </a>
-    <a class="project-card" href="https://github.com/ameyakonk/Face-Swap" target="_blank">
       <p class="project-cat">Computer Vision</p>
       <p class="project-name">Face Swap</p>
       <p class="project-desc">Real-time facial landmark detection and seamless face transfer between image and video sources.</p>
@@ -577,20 +559,55 @@
       <p class="project-name">Stereo Depth Map Estimation</p>
       <p class="project-desc">3D reconstruction from stereo image pairs using disparity computation and calibration pipelines.</p>
     </a>
-    <a class="project-card" href="https://github.com/ameyakonk/Lane-Detection" target="_blank">
+    <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
       <p class="project-cat">Computer Vision</p>
       <p class="project-name">Lane Detection</p>
       <p class="project-desc">Sliding window lane detection for autonomous vehicle navigation using camera-based perception.</p>
     </a>
-    <a class="project-card" href="https://github.com/ameyakonk/Structure-From-Motion" target="_blank">
+    <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
       <p class="project-cat">Computer Vision</p>
       <p class="project-name">Structure From Motion</p>
       <p class="project-desc">Reconstructing 3D scene structure from a sequence of 2D images using feature matching and bundle adjustment.</p>
     </a>
-    <a class="project-card" href="https://github.com/ameyakonk/Augmented-Reality" target="_blank">
+    <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
       <p class="project-cat">Computer Vision</p>
       <p class="project-name">Augmented Reality</p>
       <p class="project-desc">AR overlay system using camera calibration and homography estimation to embed virtual objects in real scenes.</p>
+    </a>
+
+    <!-- NLP & Deep Learning -->
+    <div style="grid-column: 1 / -1; margin-top: 2rem;">
+      <p style="font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.25rem;">🧠 NLP & Deep Learning</p>
+    </div>
+    <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
+      <p class="project-cat">NLP · Deep Learning</p>
+      <p class="project-name">Transformer-Based Conversational Assistant</p>
+      <p class="project-desc">Chatbot built on a transformer model coded from scratch — positional encoders, masked and unmasked multi-head attention. Trained on the Cornell Movie-Dialogs Corpus using NLTK tokenization. Achieved a BLEU score of 0.38.</p>
+    </a>
+
+    <!-- Path Planning -->
+    <div style="grid-column: 1 / -1; margin-top: 2rem;">
+      <p style="font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.25rem;">🗺 Path Planning</p>
+    </div>
+    <a class="project-card" href="https://github.com/ameyakonk/Path-planning-using-Dijkstra-Algorithm" target="_blank">
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">Dijkstra Algorithm</p>
+      <p class="project-desc">Implementation of Dijkstra's shortest path algorithm for robot navigation and graph traversal.</p>
+    </a>
+    <a class="project-card" href="https://github.com/ameyakonk/Path-planning-using-A-star-in-Gazebo-ROS" target="_blank">
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">A* Algorithm</p>
+      <p class="project-desc">Heuristic-based pathfinding algorithm providing efficient optimal path search for autonomous systems.</p>
+    </a>
+    <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">RRT* Algorithm</p>
+      <p class="project-desc">Rapidly-exploring Random Tree* for sampling-based motion planning in complex environments.</p>
+    </a>
+    <a class="project-card" href="https://github.com/ameyakonk" target="_blank">
+      <p class="project-cat">Path Planning</p>
+      <p class="project-name">Multi-Robot Goal Assignment</p>
+      <p class="project-desc">Distributed task allocation system for coordinating multiple autonomous robots toward joint objectives.</p>
     </a>
   </div>
 </section>
