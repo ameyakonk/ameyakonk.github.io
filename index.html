@@ -192,8 +192,7 @@
     font-family: var(--ff-mono); font-size: 0.75rem;
     letter-spacing: 0.06em; color: var(--ink3); margin-bottom: 0.5rem;
   }
-  .exp-company {
-    font-weight: 600; font-size: 0.9rem; color: var(--accent);
+  .exp-company { font-weight: 600; font-size: 1.4rem; color: var(--accent);
     text-decoration: none;
   }
   .exp-company:hover { text-decoration: underline; }
@@ -350,7 +349,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#projects">Side Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -393,9 +392,9 @@
   <h2 class="section-title">About Me</h2>
   <div class="about-grid">
     <div class="about-bio">
-      <p>I'm an embedded engineer — someone who starts at the hardware and builds upward. My foundation is firmware: bare-metal C and C++ on ARM Cortex-M devices, I2C/SPI driver development, RTOS task scheduling, sensorless FOC motor control, and the kind of real-time debugging that lives on an oscilloscope and logic analyzer.</p>
-      <p>At Stanley Black & Decker I write firmware for DeWalt power tools — implementing sensorless and sensored FOC motor control, leading cross-tool systems integration, and programming DMA for current capture with bus-current protection. On the edge ML side, I've built an end-to-end TinyML pipeline for an industrial drill: a PyTorch activity detection model compressed via structured pruning and INT8 quantization with ONNX, deployed directly to a Cortex-M4 for on-device inference with strong precision in high-vibration environments.</p>
-      <p>Before SBD, at BETiC, I designed FreeRTOS architectures for medical device prototypes — preemptive scheduling with isolated task priorities for a ventilator, and ADC/I2C sensor integration for a scalp cooling system — all to ISO 13485 development standards. My M.Eng in Robotics at UMD fused the two sides: a hybrid SVM-autoencoder fault detection system deployed as live ROS nodes on a UAV during actual flights. Embedded-first, then make it intelligent.</p>
+      <p>I'm an <strong style="color:var(--accent)">embedded engineer</strong> — someone who starts at the hardware and builds upward. My foundation is firmware: <strong style="color:var(--accent)">bare-metal C and C++</strong> on <strong style="color:var(--accent)">ARM Cortex-M</strong> devices, <strong style="color:var(--accent)">I2C/SPI driver development</strong>, <strong style="color:var(--accent)">RTOS task scheduling</strong>, <strong style="color:var(--accent)">sensorless FOC motor control</strong>, and the kind of real-time debugging that lives on an <strong style="color:var(--accent)">oscilloscope and logic analyzer</strong>.</p>
+      <p>At Stanley Black & Decker I write <strong style="color:var(--accent)">firmware</strong> for DeWalt power tools — implementing <strong style="color:var(--accent)">sensorless and sensored FOC motor control</strong>, leading cross-tool systems integration, and programming <strong style="color:var(--accent)">DMA</strong> for current capture with bus-current protection. On the edge ML side, I've built an end-to-end TinyML pipeline for an industrial drill: a PyTorch activity detection model compressed via structured pruning and INT8 quantization with ONNX, deployed directly to a <strong style="color:var(--accent)">Cortex-M4</strong> for on-device inference with strong precision in high-vibration environments.</p>
+      <p>Before SBD, at BETiC, I designed <strong style="color:var(--accent)">FreeRTOS</strong> architectures for medical device prototypes — preemptive scheduling with isolated task priorities for a ventilator, and <strong style="color:var(--accent)">ADC/I2C sensor integration</strong> for a scalp cooling system — all to ISO 13485 development standards. My M.Eng in Robotics at UMD fused the two sides: a hybrid SVM-autoencoder fault detection system deployed as live ROS nodes on a UAV during actual flights. <strong style="color:var(--accent)">Embedded-first</strong>, then make it intelligent.</p>
     </div>
     <div class="about-meta">
       <div class="meta-row"><span class="meta-label">Email</span><span class="meta-val"><a href="mailto:ameyakonkar@gmail.com">ameyakonkar@gmail.com</a></span></div>
@@ -497,19 +496,19 @@
 
         <p style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin:1rem 0 0.6rem;">Motor Control & Firmware</p>
         <ul class="exp-bullets">
-          <li>Implemented Sensorless FOC algorithm for grinders on ARM Cortex-M0+ using IAR, achieving precise torque and speed control under dynamic load conditions.</li>
-          <li>Led systems integration of Sensored FOC with quadrature encoders across tools (lawn mowers, grinders, concrete saws), resulting in a 15% increase in efficiency.</li>
-          <li>Developed I2C and SPI drivers for encoders and sensors on ARM Cortex-M0+ in Embedded C, improving sensor communication reliability.</li>
-          <li>Programmed peripheral-to-memory DMA to capture three-phase currents of a PMSM and added bus-current protection, preventing over-current events and enhancing system safety.</li>
-          <li>Optimized firmware using J-Link RTT, Ozone for non-intrusive logging, and RTOS features — enabling debugging of time-critical communication protocols.</li>
+          <li>Implemented <strong style="color:var(--accent)">Sensorless FOC</strong> algorithm for grinders on <strong style="color:var(--accent)">ARM Cortex-M0+</strong> using <strong style="color:var(--accent)">IAR</strong>, achieving precise torque and speed control under dynamic load conditions.</li>
+          <li>Led systems integration of <strong style="color:var(--accent)">Sensored FOC</strong> with <strong style="color:var(--accent)">quadrature encoders</strong> across tools (lawn mowers, grinders, concrete saws), resulting in a 15% increase in efficiency.</li>
+          <li>Developed <strong style="color:var(--accent)">I2C and SPI drivers</strong> for encoders and sensors on <strong style="color:var(--accent)">ARM Cortex-M0+</strong> in <strong style="color:var(--accent)">Embedded C</strong>, improving sensor communication reliability.</li>
+          <li>Programmed peripheral-to-memory <strong style="color:var(--accent)">DMA</strong> to capture three-phase currents of a <strong style="color:var(--accent)">PMSM</strong> and added bus-current protection, preventing over-current events and enhancing system safety.</li>
+          <li>Optimized <strong style="color:var(--accent)">firmware</strong> using <strong style="color:var(--accent)">J-Link RTT</strong>, <strong style="color:var(--accent)">Ozone</strong> for non-intrusive logging, and <strong style="color:var(--accent)">RTOS</strong> features — enabling debugging of time-critical communication protocols.</li>
           <li>Collaborated with cross-functional teams using Agile development, code reviews, and system integration — reducing integration time and improving firmware stability.</li>
         </ul>
 
         <p style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin:1.5rem 0 0.6rem;">Edge AI & TinyML</p>
         <ul class="exp-bullets">
-          <li>Engineered an end-to-end TinyML pipeline for an industrial drill — deploying a PyTorch-based activity detection model to an ARM Cortex-M4, enabling on-device inference with low latency for activity monitoring.</li>
-          <li>Integrated MEMS accelerometer and gyroscope sensors for real-time data acquisition and model evaluation, linking hardware and ML components for immediate activity feedback.</li>
-          <li>Optimized the time-series model via structured pruning and INT8 quantization using ONNX, significantly reducing memory footprint for deployment on constrained hardware.</li>
+          <li>Engineered an end-to-end <strong style="color:var(--accent)">TinyML pipeline</strong> for an industrial drill — deploying a <strong style="color:var(--accent)">PyTorch</strong>-based activity detection model to an <strong style="color:var(--accent)">ARM Cortex-M4</strong>, enabling on-device inference with low latency for activity monitoring.</li>
+          <li>Integrated <strong style="color:var(--accent)">MEMS accelerometer and gyroscope</strong> sensors for real-time data acquisition and model evaluation, linking hardware and ML components for immediate activity feedback.</li>
+          <li>Optimized the time-series model via <strong style="color:var(--accent)">structured pruning</strong> and <strong style="color:var(--accent)">INT8 quantization</strong> using <strong style="color:var(--accent)">ONNX</strong>, significantly reducing memory footprint for deployment on constrained hardware.</li>
           <li>Achieved 95% precision in recoil detection and 86% accuracy for general activity classification in high-vibration industrial environments.</li>
         </ul>
       </div>
@@ -518,16 +517,16 @@
     <div class="exp-item">
       <div class="exp-meta">
         <p class="exp-period">Jan 2022 — Sep 2022</p>
-        <a class="exp-company" href="https://umd.edu/" target="_blank">Univ. of Maryland, CP</a>
+        <a class="exp-company" href="https://umd.edu/" target="_blank">Univ. of Maryland, College Park</a>
       </div>
       <div>
         <p class="exp-role">Graduate Research Assistant</p>
         <ul class="exp-bullets">
-          <li>Led a team of 4 to architect a real-time fault detection module for a Carbon-Z Cub SS UAV, identifying 5+ distinct actuator failures across varying weather conditions.</li>
-          <li>Boosted fault classification accuracy from 78% to 84% by engineering features from 9+ high-frequency sensor streams (IMU, GPS, barometer) and deploying a hybrid SVM-autoencoder model.</li>
-          <li>Developed a modular ROS architecture in Python with dedicated nodes for sensor data processing and fault inference, streamlining data flow and reducing integration time for new sensors.</li>
-          <li>Containerized the full ROS workspace using Docker, ensuring deterministic behavior across development and flight hardware environments.</li>
-          <li>Integrated the ML pipeline into the vehicle's autonomous navigation stack, delivering real-time inference during live flight missions.</li>
+          <li>Led a team of 4 to architect a real-time <strong style="color:var(--accent)">fault detection</strong> module for a Carbon-Z Cub SS UAV, identifying 5+ distinct actuator failures across varying weather conditions.</li>
+          <li>Boosted fault classification accuracy from 78% to 84% by engineering features from 9+ high-frequency <strong style="color:var(--accent)">sensor streams (IMU, GPS, barometer)</strong> and deploying a <strong style="color:var(--accent)">hybrid SVM-autoencoder</strong> model.</li>
+          <li>Developed a modular <strong style="color:var(--accent)">ROS</strong> architecture in Python with dedicated nodes for sensor data processing and fault inference, streamlining data flow and reducing integration time for new sensors.</li>
+          <li>Containerized the full <strong style="color:var(--accent)">ROS</strong> workspace using <strong style="color:var(--accent)">Docker</strong>, ensuring deterministic behavior across development and flight hardware environments.</li>
+          <li>Integrated the <strong style="color:var(--accent)">ML pipeline</strong> into the vehicle's autonomous navigation stack, delivering <strong style="color:var(--accent)">real-time inference</strong> during live flight missions.</li>
         </ul>
       </div>
     </div>
@@ -540,9 +539,9 @@
       <div>
         <p class="exp-role">Project Research Assistant</p>
         <ul class="exp-bullets">
-          <li>Architected a multi-rate task scheduler to ensure deterministic response times for fault sensing and pressure regulation while maintaining ISO 13485 compliant development standards for a ventilator prototype.</li>
-          <li>Designed a preemptive FreeRTOS architecture with prioritized task scheduling, isolating critical Breath Control and Alarm tasks from low-priority UI functions on an ARM Cortex-M4.</li>
-          <li>Interfaced pressure, humidity, and liquid-flow sensors via ADC and I2C on an ARM Cortex-M4 for a scalp-cooling system, delivering reliable sensor data that supported consistent temperature control.</li>
+          <li>Architected a <strong style="color:var(--accent)">multi-rate task scheduler</strong> to ensure deterministic response times for fault sensing and pressure regulation while maintaining <strong style="color:var(--accent)">ISO 13485</strong> compliant development standards for a ventilator prototype.</li>
+          <li>Designed a preemptive <strong style="color:var(--accent)">FreeRTOS</strong> architecture with prioritized task scheduling, isolating critical Breath Control and Alarm tasks from low-priority UI functions on an <strong style="color:var(--accent)">ARM Cortex-M4</strong>.</li>
+          <li>Interfaced pressure, humidity, and liquid-flow sensors via <strong style="color:var(--accent)">ADC and I2C</strong> on an <strong style="color:var(--accent)">ARM Cortex-M4</strong> for a scalp-cooling system, delivering reliable sensor data that supported consistent temperature control.</li>
           <li>Collaborated with cross-functional teams using JIRA and Agile sprints, delivering a fully integrated system that met the project timeline and passed all verification tests.</li>
         </ul>
       </div>
@@ -606,7 +605,7 @@
 <!-- PROJECTS -->
 <section id="projects">
   <p class="section-label">Selected Work</p>
-  <h2 class="section-title">Projects</h2>
+  <h2 class="section-title">Side Projects</h2>
   <div class="projects-grid">
     <!-- Embedded & Edge ML -->
     <div style="grid-column: 1 / -1; margin-top: 1rem;">
