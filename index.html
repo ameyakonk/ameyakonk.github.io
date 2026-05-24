@@ -351,9 +351,9 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">Embedded Systems · Edge ML · Real-Time AI</p>
+    <p class="hero-eyebrow">Embedded Systems · Firmware · Edge ML</p>
     <h1 class="hero-name">Ameya<br><em>Konkar</em></h1>
-    <p class="hero-desc">I build intelligent systems at the edge — deploying ML models on microcontrollers, writing real-time embedded firmware, and closing the loop between sensors and on-device inference. From FOC motor control on DeWalt tools to SVM fault detection running live on a UAV.</p>
+    <p class="hero-desc">I write firmware for hardware that thinks. Starting from bare-metal C on ARM Cortex-M — drivers, control loops, state machines — and building up to on-device ML: PyTorch models compressed to INT8 and deployed via X-CUBE-AI, running inference in real time with no cloud in the loop.</p>
     <div class="hero-btns">
       <a href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing" class="btn btn-primary" target="_blank">View Résumé</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -386,9 +386,9 @@
   <h2 class="section-title">About Me</h2>
   <div class="about-grid">
     <div class="about-bio">
-      <p>I engineer the intersection of embedded systems and machine learning — building systems where inference happens on the device, in real time, under tight resource constraints. My work lives at the edge: inside microcontrollers, on single-board computers, and aboard autonomous vehicles.</p>
-      <p>At Stanley Black & Decker, I develop embedded firmware and motor control algorithms for next-generation DeWalt power tools — implementing FOC on ARM Cortex-M MCUs, architecting NFC communication stacks, and writing the drivers and control loops that make hardware behave intelligently.</p>
-      <p>My graduate research in robotics pushed me deep into edge ML: training SVM classifiers on multi-sensor UAV data and deploying them as real-time ROS nodes on a Raspberry Pi, achieving 95% fault-detection accuracy during live flights. I think about model compression, quantization, and latency as first-class design constraints — not afterthoughts.</p>
+      <p>I'm a Baltimore-based embedded engineer — someone who starts at the hardware and builds upward. My foundation is firmware: bare-metal C, peripheral drivers, real-time control loops, and the discipline that comes from debugging systems where a missed deadline or a wrong register write means a physical failure.</p>
+      <p>On top of that foundation I've built an edge ML practice. At Stanley Black & Decker I write firmware for next-generation DeWalt tools, implementing FOC motor control on ARM Cortex-M — and separately, I've built an end-to-end TinyML pipeline for an industrial drill: PyTorch activity detection model, compressed via structured pruning and INT8 quantization with ONNX, deployed using X-CUBE-AI. 95% precision in recoil detection in high-vibration environments. Before SBD, at BETiC, I built embedded prototypes in C for three medical devices: ventilation state machines for a clinical ventilator, PID temperature control for a scalp cooling system, and on-device stereo depth estimation for a dental intraoral scanner.</p>
+      <p>My M.Eng in Robotics at UMD is where the two sides fused: I led a team building a real-time UAV fault detection system — a hybrid SVM-autoencoder on 9+ sensor streams, Dockerized and running as live ROS nodes during actual flights, integrated directly into the autonomous navigation stack. That project is a good summary of how I work: embedded-first, then make it intelligent.</p>
     </div>
     <div class="about-meta">
       <div class="meta-row"><span class="meta-label">Birthday</span><span class="meta-val">October 28, 1997</span></div>
@@ -407,22 +407,32 @@
   <h2 class="section-title">Experience</h2>
   <div class="exp-list">
 
-    <div class="exp-item">
+    <div class="exp-item" style="border-bottom: none; padding-bottom: 0;">
       <div class="exp-meta">
         <p class="exp-period">Aug 2023 — Present</p>
         <a class="exp-company" href="https://www.stanleyblackanddecker.com/" target="_blank">Stanley Black & Decker</a>
       </div>
       <div>
-        <p class="exp-role">Embedded Systems & Firmware Engineer</p>
+        <p class="exp-role">Embedded Systems & Edge ML Engineer</p>
+
+        <p style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin:1rem 0 0.6rem;">Motor Control & Firmware</p>
         <ul class="exp-bullets">
           <li>Developing bare-metal and RTOS-based firmware in C for next-generation DeWalt brushless power tools on ARM Cortex-M MCUs.</li>
           <li>Implementing FOC (Field-Oriented Control) motor control algorithms — tuning PI current controllers, speed loops, and space-vector PWM generation for brushless motor drives.</li>
-          <li>Architected NFC communication stack to relay motor operating parameters wirelessly to selected power tools during configuration and diagnostics.</li>
           <li>Writing hardware abstraction layers (HAL), peripheral drivers (SPI, I2C, UART, PWM, ADC, DMA), and closed-loop control state machines from scratch.</li>
           <li>Performing unit testing, hardware-in-the-loop (HIL) validation, and oscilloscope/logic-analyzer debugging to meet functional safety standards.</li>
+          <li>Collaborated with cross-functional teams using Agile development, code reviews, and system integration — reducing integration time and improving firmware stability.</li>
+        </ul>
+
+        <p style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin:1.5rem 0 0.6rem;">Edge AI & TinyML</p>
+        <ul class="exp-bullets">
+          <li>Engineered an end-to-end TinyML pipeline for an industrial drill — deploying a PyTorch-based activity detection model to an ARM Cortex-M4, delivering on-device inference within the latency required for safe operation.</li>
+          <li>Optimized the time-series model via structured pruning and INT8 quantization using ONNX, significantly reducing memory footprint for deployment on constrained hardware.</li>
+          <li>Achieved 95% precision in recoil detection and 86% accuracy for general activity classification in high-vibration industrial environments; deployed using X-CUBE-AI.</li>
         </ul>
       </div>
     </div>
+    <div style="border-bottom: 1px solid var(--border); margin: 0 0 0 0;"></div>
 
     <div class="exp-item">
       <div class="exp-meta">
@@ -430,13 +440,13 @@
         <a class="exp-company" href="https://umd.edu/" target="_blank">Univ. of Maryland, CP</a>
       </div>
       <div>
-        <p class="exp-role">Edge ML Research Assistant</p>
+        <p class="exp-role">Graduate Research Assistant</p>
         <ul class="exp-bullets">
-          <li>Led a team of 4 to design and deploy an on-device Fault Detection system for 5+ actuator fault classes in a fixed-wing UAV — the full pipeline ran in real time on a Raspberry Pi 4.</li>
-          <li>Collected multi-modal sensor data (5+ sensors, 4+ actuators) during live UAV flights to build a labeled training dataset under realistic aerodynamic conditions.</li>
-          <li>Engineered time-domain and frequency-domain features; trained and optimized an SVM classifier, applying K-Fold Cross Validation to achieve 95% real-time accuracy.</li>
-          <li>Quantized and optimized the model for edge deployment, then wrapped it as a ROS node integrated into the UAV's Autonomous Navigation System.</li>
-          <li>Demonstrated closed-loop edge inference: sensor data → on-board model → fault flag → navigation response, with no cloud dependency.</li>
+          <li>Led a team of 4 to architect a real-time fault detection module for a Carbon-Z Cub SS UAV, identifying 5+ distinct actuator failures across varying weather conditions.</li>
+          <li>Boosted fault classification accuracy from 78% to 84% by engineering features from 9+ high-frequency sensor streams (IMU, GPS, barometer) and deploying a hybrid SVM-autoencoder model.</li>
+          <li>Developed a modular ROS architecture in Python with dedicated nodes for sensor data processing and fault inference, streamlining data flow and reducing integration time for new sensors.</li>
+          <li>Containerized the full ROS workspace using Docker, ensuring deterministic behavior across development and flight hardware environments.</li>
+          <li>Integrated the ML pipeline into the vehicle's autonomous navigation stack, delivering real-time inference during live flight missions.</li>
         </ul>
       </div>
     </div>
@@ -447,13 +457,12 @@
         <a class="exp-company" href="https://www.betic.org/" target="_blank">BETiC</a>
       </div>
       <div>
-        <p class="exp-role">Embedded Systems & On-Device CV Research Assistant</p>
+        <p class="exp-role">Project Research Assistant</p>
         <ul class="exp-bullets">
           <li>Developed resource-constrained firmware in C for three medical device prototypes targeting low-power MCUs: Ventilator (VI-SWAAS), Scalp Cooling System, and Dental Intraoral Scanner.</li>
           <li>VI-SWAAS ventilator — implemented four clinical ventilation mode state machines (VC, PC, SIMV, CPAP) with real-time sensor validation, alarm logic, and hardware fail-safes.</li>
           <li>Scalp Cooling System — engineered PID-based temperature control loops, multi-mode state machines, and an embedded UI with sensor fusion running on a bare-metal MCU.</li>
           <li>Dental Intraoral Scanner — wrote C drivers for dual Basler acA1300-200uc cameras over GigE Vision; implemented stereo depth map estimation entirely on-device for real-time 3D reconstruction.</li>
-          <li>All CV inference ran locally with no cloud — optimized for latency and memory footprint on embedded Linux.</li>
         </ul>
       </div>
     </div>
@@ -519,20 +528,16 @@
   <h2 class="section-title">Projects</h2>
   <div class="projects-grid">
     <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
-      <p class="project-cat" style="color:var(--accent2);">⚡ Embedded · Featured</p>
-      <p class="project-name">DeWalt Motor Control Firmware</p>
-      <p class="project-desc">FOC motor control on ARM Cortex-M for next-gen DeWalt brushless tools. Bare-metal C, SPI/I2C/UART/PWM drivers, NFC parameter relay, and HIL-validated control loops under functional safety constraints.</p>
+      <p class="project-cat" style="color:var(--accent2);">⚡ Edge ML · Featured</p>
+      <p class="project-name">TinyML Pipeline — Industrial Drill (DeWalt)</p>
+      <p class="project-desc">End-to-end TinyML pipeline deployed on an ARM Cortex-M4: PyTorch activity detection model → structured pruning → INT8 quantization via ONNX → X-CUBE-AI deployment. 95% precision in recoil detection, 86% activity classification accuracy in high-vibration environments. MLflow for model-to-firmware traceability.</p>
     </div>
     <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
       <p class="project-cat" style="color:var(--accent2);">⚡ Edge ML · Featured</p>
-      <p class="project-name">UAV Fault Detection — Edge Inference</p>
-      <p class="project-desc">End-to-end edge ML pipeline: feature engineering on 5+ sensor streams → SVM classifier optimized for Raspberry Pi 4 → deployed as a live ROS node. 95% accuracy, zero cloud dependency, closed-loop flight response.</p>
+      <p class="project-name">UAV Fault Detection — Hybrid SVM-Autoencoder</p>
+      <p class="project-desc">Real-time fault detection for a Carbon-Z Cub SS UAV. Hybrid SVM-autoencoder model on 9+ sensor streams (IMU, GPS, barometer) — boosted accuracy from 78% to 84%. Modular ROS nodes, Dockerized workspace, live inference during flight.</p>
     </div>
-    <div class="project-card" style="border-color: var(--accent2); background: rgba(232,118,58,0.08);">
-      <p class="project-cat" style="color:var(--accent2);">⚡ Embedded CV · Featured</p>
-      <p class="project-name">On-Device Stereo Depth (Intraoral Scanner)</p>
-      <p class="project-desc">Real-time stereo depth map estimation running locally on embedded Linux. C drivers for dual Basler GigE cameras, disparity computation, and 3D reconstruction — all on-device for a medical imaging prototype.</p>
-    </div>
+    <a class="project-card" href="https://ameyakonk.github.io/projects/Dijkstra.html" target="_blank">
       <p class="project-cat">Path Planning</p>
       <p class="project-name">Dijkstra Algorithm</p>
       <p class="project-desc">Implementation of Dijkstra's shortest path algorithm for robot navigation and graph traversal.</p>
@@ -555,7 +560,12 @@
     <a class="project-card" href="https://ameyakonk.github.io/projects/MonocularDepthEst.html" target="_blank">
       <p class="project-cat">Edge ML · Computer Vision</p>
       <p class="project-name">Monocular Depth Estimation</p>
-      <p class="project-desc">Deep learning depth inference from a single RGB camera — optimized for edge deployment with minimal memory and compute footprint. Suitable for resource-constrained robotic platforms.</p>
+      <p class="project-desc">UNet with DenseNet169 encoder, custom loss combining edge loss, depth loss, and structural similarity. 70% test accuracy on NYU2 Depth dataset. Based on "High-Quality Monocular Depth Estimation via Transfer Learning."</p>
+    </a>
+    <a class="project-card" href="#" target="_blank">
+      <p class="project-cat">NLP · Deep Learning</p>
+      <p class="project-name">Transformer-Based Conversational Assistant</p>
+      <p class="project-desc">Chatbot built on a transformer model coded from scratch — positional encoders, masked and unmasked multi-head attention. Trained on the Cornell Movie-Dialogs Corpus using NLTK tokenization. Achieved a BLEU score of 0.38.</p>
     </a>
     <a class="project-card" href="https://ameyakonk.github.io/projects/FaceSwap.html" target="_blank">
       <p class="project-cat">Computer Vision</p>
@@ -568,9 +578,9 @@
       <p class="project-desc">3D reconstruction from stereo image pairs using disparity computation and calibration pipelines.</p>
     </a>
     <a class="project-card" href="https://ameyakonk.github.io/projects/SlidingWindowLaneDetect.html" target="_blank">
-      <p class="project-cat">Embedded CV · Autonomous Systems</p>
+      <p class="project-cat">Computer Vision</p>
       <p class="project-name">Lane Detection</p>
-      <p class="project-desc">Real-time sliding window lane detection designed for on-board automotive perception — low-latency, camera-only, no cloud dependency.</p>
+      <p class="project-desc">Sliding window lane detection for autonomous vehicle navigation using camera-based perception.</p>
     </a>
     <a class="project-card" href="https://ameyakonk.github.io/projects/StructureFromMotion.html" target="_blank">
       <p class="project-cat">Computer Vision</p>
@@ -600,7 +610,6 @@
       <span class="skill-chip">HAL / BSP</span>
       <span class="skill-chip">SPI · I2C · UART · CAN</span>
       <span class="skill-chip">PWM / ADC / DMA</span>
-      <span class="skill-chip">NFC / RFID</span>
       <span class="skill-chip">Bootloader Design</span>
       <span class="skill-chip">HIL Testing</span>
       <span class="skill-chip">JTAG / SWD Debugging</span>
@@ -611,30 +620,32 @@
   <div class="skills-block">
     <p class="skills-cat">Edge ML & On-Device AI</p>
     <div class="skills-tags">
-      <span class="skill-chip">TensorFlow Lite</span>
+      <span class="skill-chip">PyTorch</span>
       <span class="skill-chip">TinyML</span>
-      <span class="skill-chip">Model Quantization (INT8)</span>
-      <span class="skill-chip">Model Pruning</span>
-      <span class="skill-chip">ONNX Runtime</span>
-      <span class="skill-chip">Edge Inference Optimization</span>
-      <span class="skill-chip">Raspberry Pi Deployment</span>
-      <span class="skill-chip">OpenCV (embedded)</span>
+      <span class="skill-chip">X-CUBE-AI</span>
+      <span class="skill-chip">ONNX</span>
+      <span class="skill-chip">INT8 Quantization</span>
+      <span class="skill-chip">Structured Pruning</span>
+      <span class="skill-chip">MLflow</span>
+      <span class="skill-chip">TensorFlow Lite</span>
       <span class="skill-chip">scikit-learn</span>
-      <span class="skill-chip">Feature Engineering</span>
-      <span class="skill-chip">SVM · KNN · Random Forest</span>
+      <span class="skill-chip">OpenCV</span>
       <span class="skill-chip">Real-Time CV Pipelines</span>
+      <span class="skill-chip">Feature Engineering</span>
     </div>
   </div>
 
   <div class="skills-block">
-    <p class="skills-cat">ML & Deep Learning Frameworks</p>
+    <p class="skills-cat">Tools & Frameworks</p>
     <div class="skills-tags">
-      <span class="skill-chip">TensorFlow</span>
-      <span class="skill-chip">PyTorch</span>
       <span class="skill-chip">ROS / ROS2</span>
+      <span class="skill-chip">Docker</span>
+      <span class="skill-chip">CMake</span>
+      <span class="skill-chip">Git / GitHub CI</span>
+      <span class="skill-chip">Pandas</span>
+      <span class="skill-chip">Gazebo</span>
       <span class="skill-chip">Flask</span>
-      <span class="skill-chip">Django</span>
-      <span class="skill-chip">Node.js</span>
+      <span class="skill-chip">Jupyter</span>
     </div>
   </div>
 
